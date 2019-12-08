@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css">
+  <title>CFI</title>
+</head>
+<body>
+  <div class="navbar">
+    <div id="mySidenav" class="sidenav">
+      <a class="closeNavBtn">&times;</a>
+      <small>Welcome, Tariq M.Y Alsharif</small>
+      <a href="home.html"> <i class="fa fa-user-circle-o"></i>  Accounts</a>
+      <a href="tarnsfer.html"><i class="fa fa-exchange" aria-hidden="true"></i> Transfer</a>
+      <a href="deposit.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  Deposit</a>
+      <a href="withdrawal.html" class="tab-active"><i class="fa fa-usd" aria-hidden="true"></i> Withdrawal</a>
+      <a href="closedposition.html"><i class="fa fa-lock" aria-hidden="true"></i> Closed Position</a>
+      <a href="transhistory.html"><i class="fa fa-history" aria-hidden="true"></i> Transaction History</a>
+      <a href="../index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+      <div class="menu-logo">
+        <img src="../images/512x512.png" width="40">
+        <small class="copyright">Copyright&copy; 2019</small>
+      </div>
+    </div>
+    <div class="pull-left">
+      <img class="openNavBtn pull-left" src="../images/menu-icon.png" width="30">
+    </div>
+    <div class="text-center prefix page-title">
+      <span>Withdrawal</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="select-account">
+          <form class="deposit-form">
+            <div class="form-group">
+              <label for="sel1"><i class="fa fa-arrow-up"></i> From Account</label>
+              <select class="minimal">
+                <option>Demo/Standard</option>
+                <option>Demo/Standard</option>
+                <option>No wrapper</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sel1"> <i class="fa fa-arrow-down"></i> Cash Account</label>
+              <select class="minimal">
+                <option>Demo/Standard</option>
+                <option>Demo/Standard</option>
+                <option>No wrapper</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="amount"><i class="fa fa-dollar"></i> Amount</label>
+              <input type="text" class="form-control" name="" value="" id="amount" placeholder="0.00">
+              <small>Insert the amount without any characters or commas.</small>
+            </div>
+            <div class="form-group">
+              <div class="pull-left">
+                <label>Equity</label>
+              </div>
+              <div class="text-right">
+                  <p>0.00</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="pull-left">
+                <label>Free Margin</label>
+              </div>
+              <div class="text-right">
+                  <p>0.00</p>
+              </div>
+            </div>
+            <div class="form-group text-center clearfix">
+              <input type="submit" name="submit" value="Proceed">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>
