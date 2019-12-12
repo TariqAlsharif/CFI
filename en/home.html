@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/main.css" data-version="ver">
   <title>CFI</title>
 </head>
 <body>
@@ -103,8 +103,102 @@
                   </div>
                 </div>
               </li>
-
-
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-body account-details">
+                    <div class="media">
+                      <div class="media-left">
+                          <img class="media-object" src="../images/mt5.png" width="35">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">
+                          Demo/Standard
+                        </h4>
+                        <small class="account-number">19000234</small>
+                        <p class="account-balance">Balance: <span class="value">3,200 USD</span> </p>
+                        <p class="account-equity">Equity: <span class="value">3,200 USD</span></p>
+                      </div>
+                      <div class="media-right">
+                        <a class="myBtn" href="#">
+                          <img src="../images/actionbutton.png" width="30">
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-body account-details">
+                    <div class="media">
+                      <div class="media-left">
+                          <img class="media-object" src="../images/mt5.png" width="35">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">
+                          Demo/Standard
+                        </h4>
+                        <small class="account-number">19000234</small>
+                        <p class="account-balance">Balance: <span class="value">3,200 USD</span> </p>
+                        <p class="account-equity">Equity: <span class="value">3,200 USD</span></p>
+                      </div>
+                      <div class="media-right">
+                        <a class="myBtn" href="#">
+                          <img src="../images/actionbutton.png" width="30">
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-body account-details">
+                    <div class="media">
+                      <div class="media-left">
+                          <img class="media-object" src="../images/mt5.png" width="35">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">
+                          Demo/Standard
+                        </h4>
+                        <small class="account-number">19000234</small>
+                        <p class="account-balance">Balance: <span class="value">3,200 USD</span> </p>
+                        <p class="account-equity">Equity: <span class="value">3,200 USD</span></p>
+                      </div>
+                      <div class="media-right">
+                        <a class="myBtn" href="#">
+                          <img src="../images/actionbutton.png" width="30">
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="panel panel-default">
+                  <div class="panel-body account-details">
+                    <div class="media">
+                      <div class="media-left">
+                          <img class="media-object" src="../images/mt5.png" width="35">
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">
+                          Demo/Standard
+                        </h4>
+                        <small class="account-number">19000234</small>
+                        <p class="account-balance">Balance: <span class="value">3,200 USD</span> </p>
+                        <p class="account-equity">Equity: <span class="value">3,200 USD</span></p>
+                      </div>
+                      <div class="media-right">
+                        <a class="myBtn" href="#">
+                          <img src="../images/actionbutton.png" width="30">
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
             <p class="clearfix"></p>
           </div>
@@ -172,6 +266,32 @@
 
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/main.js" data-version="ver"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+          //Update Script Files and Style Files Version
+          $(function () {
+              var versionUpdate = '1.0.5';
+              $("script").each(function () {
+                  if ($(this).data('version') == 'ver') {
+                      var src = $(this).attr('src');
+
+                      src += '?' + versionUpdate;
+                      $(this).attr('src', src);
+                  }
+              });
+              $("link").each(function () {
+                  if ($(this).data('version') == 'ver') {
+                      var src = $(this).attr('href');
+
+                      src += '?' + versionUpdate;
+                      $(this).attr('href', src);
+                  }
+              });
+          })
+      });
+  </script>
+
 </body>
 </html>
