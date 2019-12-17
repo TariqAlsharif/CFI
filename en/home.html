@@ -9,29 +9,7 @@
   <title>CFI</title>
 </head>
 <body>
-  <div class="navbar">
-    <div id="mySidenav" class="sidenav">
-      <a class="closeNavBtn">&times;</a>
-      <small>Welcome, Tariq M.Y Alsharif</small>
-      <a href="home.html" class="tab-active"> <i class="fa fa-user-circle-o"></i>  Accounts</a>
-      <a href="tarnsfer.html"><i class="fa fa-exchange" aria-hidden="true"></i> Transfer</a>
-      <a href="deposit.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  Deposit</a>
-      <a href="withdrawal.html"><i class="fa fa-usd" aria-hidden="true"></i> Withdrawal</a>
-      <a href="closedposition.html"><i class="fa fa-lock" aria-hidden="true"></i> Closed Position</a>
-      <a href="transhistory.html"><i class="fa fa-history" aria-hidden="true"></i> Transaction History</a>
-      <a href="../index.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-      <div class="menu-logo">
-        <img src="../images/512x512.png" width="40">
-        <small class="copyright">Copyright&copy; 2019</small>
-      </div>
-    </div>
-    <div class="pull-left">
-      <img class="openNavBtn pull-left" src="../images/menu-icon.png" width="30">
-    </div>
-    <div class="text-center prefix page-title">
-      <span>Home</span>
-    </div>
-  </div>
+  <div class="navbar"></div>
   <div class="container">
     <div class="row equity-block">
         <div class="col-xs-4">
@@ -240,34 +218,11 @@
     </div>
   </div>
 
-  <!-- Message box -->
-  <div id="" class="msg-box">
-    <div class="msg-content">
-      <div class="msg-title text-center">
-        <i class="fa fa-check"></i>
-        <h4>Success</h4>
-      </div>
-      <div class="msg-description text-center">
-        <p>Your transfer has been success!</p>
-      </div>
-      <div class="msg-options text-center">
-        <button class="btn btn-default msg-btn" type="button" name="button">Ok</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Loading box -->
-  <div id="" class="loading-box">
-    <div class="loading-content text-center">
-      <img src="../images/dollar.gif" width="30" style="padding:2px;"><br>
-      <small>Loading...</small>
-    </div>
-  </div>
+  <input type="hidden" name="home" value="Home">
 
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/main.js" data-version="ver"></script>
-
   <script type="text/javascript">
       $(document).ready(function () {
           //Update Script Files and Style Files Version
