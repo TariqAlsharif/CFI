@@ -22,7 +22,7 @@ $(".user-login").on("submit", function(e){
 
 });
 
-$('.navbar').load('../en/_navbar.html');
+//$('.navbar').load('../en/_navbar.html');
 
 //Modal
 $('.myBtn').on('click', function (event){
