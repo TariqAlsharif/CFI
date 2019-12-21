@@ -28,9 +28,9 @@ $(".forget-pass-form").on('submit', function(){
   var new_pass = $("#new-pass").val();
   var confirm_pass = $("#conf-pass").val();
   if(new_pass === confirm_pass){
-    $(this).css('border-color','green');
+    $("#conf-pass").css('border-color','green');
   } else {
-    $(this).css('border-color','red');
+    $("#conf-pass").css('border-color','red');
     return false;
   }
 });
