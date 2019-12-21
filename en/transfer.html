@@ -9,17 +9,12 @@
   <title>CFI</title>
 </head>
 <body>
-  <div class="row copied-msg">
-    <div class="col-xs-12 text-center">
-      <p>Account number is copied to clipboard!</ps>
-    </div>
-  </div>
   <div class="navbar">
     <div id="mySidenav" class="sidenav">
       <a class="closeNavBtn">&times;</a>
       <small id="username">Welcome, Tariq M.Y Alsharif</small>
-      <a href="home.html" class="tab-active"> <i class="fa fa-user-circle-o"></i>  Accounts</a>
-      <a href="transfer.html"><i class="fa fa-exchange" aria-hidden="true"></i> Transfer</a>
+      <a href="home.html"> <i class="fa fa-user-circle-o"></i>  Accounts</a>
+      <a href="transfer.html" class="tab-active"><i class="fa fa-exchange" aria-hidden="true"></i> Transfer</a>
       <a href="deposit.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  Deposit</a>
       <a href="withdrawal.html"><i class="fa fa-usd" aria-hidden="true"></i> Withdrawal</a>
       <a href="closedposition.html"><i class="fa fa-lock" aria-hidden="true"></i> Closed Position</a>
@@ -40,34 +35,44 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 text-center">
-        <div class="qrcode-block">
-          <div class="qrcode-header">
-            <h4>Demo/Standard</h4>
-            <h4>19000234</h4>
-          </div>
-          <div class="qrcode-body">
-            <img src="../images/qr-code.png" width="200">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 text-center">
-        <div class="qrcode-options">
-          <ul>
-            <li>
-              <a href="#"> <i class="fa fa-share-alt"></i> Share  my code</a>
-            </li>
-            <li>
-              <a href="#"> <i class="fa fa-cloud-download"></i> Save to photos</a>
-            </li>
-          </ul>
+      <div class="col-xs-12">
+        <div class="select-account">
+          <form class="deposit-form">
+            <div class="form-group">
+              <label for="sel1"><i class="fa fa-arrow-up"></i> From Account</label>
+              <select class="minimal">
+                <option>Demo/Standard</option>
+                <option>Demo/Standard</option>
+                <option>No wrapper</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sel1"> <i class="fa fa-arrow-down"></i> Cash Account</label>
+              <select class="minimal">
+                <option>Demo/Standard</option>
+                <option>Demo/Standard</option>
+                <option>No wrapper</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="amount"><i class="fa fa-dollar"></i> Amount</label>
+              <input type="number" class="form-control amount-field" name="" value="" id="amount" placeholder="0.00">
+              <small>Insert the amount without any characters or commas.</small>
+            </div>
+            <div class="form-group">
+              <label for="note"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Note</label>
+              <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Write the reason of transfer..."></textarea>
+            </div>
+            <div class="form-group text-center">
+              <input class="btm-pos" type="submit" name="submit" value="Proceed">
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  <input type="hidden" name="qrcode" value="QR Code">
+
+  <input type="hidden" name="transfer" value="Transfer">
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/main.js"></script>

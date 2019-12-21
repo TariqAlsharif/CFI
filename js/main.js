@@ -22,7 +22,7 @@ $(".user-login").on("submit", function(e){
 
 });
 
-//$('.navbar').load('../en/_navbar.html');
+getToday();
 
 //Modal
 $('.myBtn').on('click', function (event){
@@ -97,6 +97,18 @@ function ShowMessageBox(icon, status, message){
 
 function HideMessageBox(){
   $('.msg-box').remove();
+};
+
+function getToday(){
+  var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+
+  var output = d.getFullYear() + '-' +
+      (month<10 ? '0' : '') + month + '-' +
+      (day<10 ? '0' : '') + day;
+
+  $('input[type="date"]').attr('max',output);
 };
 
 }); //end ready fn
