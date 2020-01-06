@@ -7,6 +7,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/main.css">
   <title>CFI</title>
+  <style>
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 96%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
 </head>
 <body>
   <div class="navbar">
@@ -17,14 +28,33 @@
       <span id="page-name"></span>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row text-center">
-      <small>Google Map</small>
-    </div>
-  </div>
+  <div id="map"></div>
 
   <input type="hidden" name="location" value="Location">
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjEogSVSmmkKBi5gTUzZBRCagA2DtECY&callback=initMap&language=en">
+  </script>
+  <script type="text/javascript">
+  function initMap() {
+    // The location of Uluru
+    var uluru = {lat: 31.9743792, lng: 35.8859141};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {
+          zoom: 16,
+          center: uluru,
+          mapTypeId: 'roadmap',
+          zoomControl: false,
+          mapTypeControl: true,
+          scaleControl: true,
+          streetViewControl: false,
+          rotateControl: false,
+          fullscreenControl: true
+      });
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+  }
+  </script>
   <script type="text/javascript" src="../lib/jquery/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/main.js"></script>
