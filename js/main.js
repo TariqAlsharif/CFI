@@ -2,6 +2,54 @@ $(document).ready(function() {
 
 "use strict"
 
+var hash_value = location.hash;
+if(hash_value === '' ||hash_value === '#home'){
+  $('#target').load('home.html',
+    function(){
+    console.log('load complete');
+    var page_name = $('input[type="hidden"]').val();
+    $('#page-name').html(page_name);
+  });
+} else {
+  $('html').load('404.html',
+    function(){
+    console.log('load complete');
+  });
+}
+
+$('.navbar a').on('click', function(event) {
+  var el = $(this);
+  var el_href = el.attr('href');
+  if(el_href == undefined){
+    return false;
+  } else {
+    var el_name = el_href.split('#',2)[1];
+    $('#target').load(el_name + '.html',
+      function(){
+      console.log('load complete');
+      var page_name = $('input[type="hidden"]').val();
+      $('#page-name').html(page_name);
+      $('#mySidenav').css('width', '0px');
+    });
+    $('.navbar a').removeClass('tab-active');
+    el.addClass('tab-active');
+  }
+});
+
+  $('div').delegate('.testbtn', 'click', function(event) {
+    event.preventDefault();
+    alert('done');
+  });
+
+  $('div').delegate('.twobtn', 'click', function(event) {
+    //event.preventDefault();
+    alert('testdone');
+  });
+
+
+
+
+
 //Variables
 var modal = $("#myModal")[0];
 var _originalSize = $(window).width() + $(window).height();
@@ -35,21 +83,18 @@ $(".forget-pass-form").on('submit', function(){
   }
 });
 
-$(".user-login").on("submit", function(e){
-
-  e.preventDefault();
-
-  location.href = ('/en/home.html');
-
-});
-
 getToday();
 
 //Modal
-$('.myBtn').on('click', function (event){
+$('div').delegate('.myBtn','click', function (event){
   event.preventDefault();
   $('#myModal').css('display','block');
 })
+//
+// $('.myBtn').on('click', function (event){
+//   event.preventDefault();
+//   $('#myModal').css('display','block');
+// })
 
 //message button
 $('.msg-btn').delegate('click', function(){
@@ -134,7 +179,7 @@ function getToday(){
 
 }); //end ready fn
 
-$( window ).on("load", function() {
+$(window).on("load", function() {
   var page_name = $('input[type="hidden"]').val();
 
   $('#page-name').html(page_name);

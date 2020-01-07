@@ -74,29 +74,16 @@
 
     <script type="text/javascript" src="lib/jquery/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js" data-version="ver"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            //Update Script Files and Style Files Version
-            $(function () {
-                var versionUpdate = '1.0.5';
-                $("script").each(function () {
-                    if ($(this).data('version') == 'ver') {
-                        var src = $(this).attr('src');
 
-                        src += '?' + versionUpdate;
-                        $(this).attr('src', src);
-                    }
-                });
-                $("link").each(function () {
-                    if ($(this).data('version') == 'ver') {
-                        var src = $(this).attr('href');
+            $(".user-login").on("submit", function(e){
 
-                        src += '?' + versionUpdate;
-                        $(this).attr('href', src);
-                    }
-                });
-            })
+              e.preventDefault();
+
+              location.href = ('/en/layout.html#home');
+
+            });
         });
     </script>
 
