@@ -54,15 +54,6 @@ $('.link-collection a').on('click', function(event) {
 
 //Variables
 var modal = $("#myModal")[0];
-var _originalSize = $(window).width() + $(window).height();
-
-$(window).resize(function(){
-  if($(window).width() + $(window).height() != _originalSize){
-    $(".btm-pos").css("position","relative");
-  }else{
-    $(".btm-pos").css("position","fixed");
-  }
-});
 
 getToday();
 
@@ -144,6 +135,7 @@ function getToday(){
 
 $(window).on("load", function() {
   var page_name = $('input[type="hidden"]').val();
+  var _originalSize = $(window).width() + $(window).height();
 
   $('#page-name').html(page_name);
 
@@ -179,4 +171,12 @@ $(window).on("load", function() {
   function HideMessageBox(){
     $('.msg-box').remove();
   };
+
+  $(window).resize(function(){
+    if($(window).width() + $(window).height() != _originalSize){
+      $(".btm-pos").css("position","relative");
+    }else{
+      $(".btm-pos").css("position","fixed");
+    }
+  });
 }); //end load fn
