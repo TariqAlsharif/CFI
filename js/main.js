@@ -52,22 +52,6 @@ $('.link-collection a').on('click', function(event) {
     alert('testdone');
   });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Variables
 var modal = $("#myModal")[0];
 var _originalSize = $(window).width() + $(window).height();
