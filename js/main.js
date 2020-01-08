@@ -6,7 +6,6 @@ var hash_value = location.hash;
 if(hash_value === '' ||hash_value === '#home'){
   $('#target').load('home.html',
     function(){
-    console.log('load complete');
     var page_name = $('input[type="hidden"]').val();
     $('#page-name').html(page_name);
   });
@@ -17,7 +16,7 @@ if(hash_value === '' ||hash_value === '#home'){
   });
 }
 
-$('.navbar a').on('click', function(event) {
+$('.link-collection a').on('click', function(event) {
   var el = $(this);
   var el_href = el.attr('href');
   if(el_href == undefined){
@@ -28,11 +27,18 @@ $('.navbar a').on('click', function(event) {
       function(){
       console.log('load complete');
       var page_name = $('input[type="hidden"]').val();
+      if(page_name == 'Account Details'){
+        $('.page-title').append('<a id="qrcode-btn" class="pull-right" href="#qrcode">'+
+          '<span class="qrcode-icon"> <i class="fa fa-qrcode"></i> </span>'+
+          '</a>');
+      }
       $('#page-name').html(page_name);
       $('#mySidenav').css('width', '0px');
+      $('#myModal').css('display','none');
     });
-    $('.navbar a').removeClass('tab-active');
+    $('.link-collection a').removeClass('tab-active');
     el.addClass('tab-active');
+    $('#qrcode-btn').remove();
   }
 });
 
@@ -50,6 +56,18 @@ $('.navbar a').on('click', function(event) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Variables
 var modal = $("#myModal")[0];
 var _originalSize = $(window).width() + $(window).height();
@@ -62,27 +80,6 @@ $(window).resize(function(){
   }
 });
 
-$("#conf-pass").on("keyup",function(){
-  var new_pass = $("#new-pass").val();
-  var confirm_pass = $("#conf-pass").val();
-  if(new_pass === confirm_pass){
-    $(this).css('border-color','green');
-  } else {
-    $(this).css('border-color','red');
-  }
-});
-
-$(".forget-pass-form").on('submit', function(){
-  var new_pass = $("#new-pass").val();
-  var confirm_pass = $("#conf-pass").val();
-  if(new_pass === confirm_pass){
-    $("#conf-pass").css('border-color','green');
-  } else {
-    $("#conf-pass").css('border-color','red');
-    return false;
-  }
-});
-
 getToday();
 
 //Modal
@@ -90,22 +87,6 @@ $('div').delegate('.myBtn','click', function (event){
   event.preventDefault();
   $('#myModal').css('display','block');
 })
-//
-// $('.myBtn').on('click', function (event){
-//   event.preventDefault();
-//   $('#myModal').css('display','block');
-// })
-
-//message button
-$('.msg-btn').delegate('click', function(){
- HideMessageBox();
-});
-
-
-$('.close').on('click', function(event) {
-  event.preventDefault();
-  $('#myModal').css('display','none');
-});
 
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -113,10 +94,8 @@ window.onclick = function(event) {
   }
 }
 
-//ShowMessageBox('check', 'success', 'test msg');
-
 //copy account number to clipboard
-$('.copy-txt').on('click', function(){
+$('div').delegate('.copy-txt', 'click', function(){
   copyToClipboard("#account-number");
 });
 
@@ -184,18 +163,36 @@ $(window).on("load", function() {
 
   $('#page-name').html(page_name);
 
-  if(page_name == 'Account Details'){
-    $('.page-title').append('<a class="pull-right" href="qrcode.html">'+
-      '<span class="qrcode-icon"> <i class="fa fa-qrcode"></i> </span>'+
-      '</a>');
-  }
 
   $('.openNavBtn').on('click', function(){
-    $('#mySidenav').css('width', '60%');
+    $('#mySidenav').css('width', '100%');
   });
 
   $('.closeNavBtn').on('click', function(){
     $('#mySidenav').css('width', '0px');
   });
 
+  $('div').delegate('#qrcode-btn','click', function() {
+    var el = $(this);
+    var el_href = el.attr('href');
+      var el_name = el_href.split('#',2)[1];
+      $('#target').load(el_name + '.html',
+        function(){
+        console.log('load complete');
+        var page_name = $('input[type="hidden"]').val();
+        $('#page-name').html(page_name);
+        $('#mySidenav').css('width', '0px');
+        $('#myModal').css('display','none');
+      });
+      $('#qrcode-btn').remove();
+  });
+
+  //message button
+  $('.msg-box').delegate('.msg-btn', 'click', function(){
+   HideMessageBox();
+  });
+
+  function HideMessageBox(){
+    $('.msg-box').remove();
+  };
 }); //end load fn
