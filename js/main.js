@@ -2,7 +2,10 @@ $(document).ready(function() {
 
 "use strict"
 
+//Variables
+var modal = $("#myModal")[0];
 var hash_value = location.hash;
+
 if(hash_value === '' ||hash_value === '#home'){
   $('#target').load('home.html',
     function(){
@@ -52,11 +55,6 @@ $('.link-collection a').on('click', function(event) {
     alert('testdone');
   });
 
-//Variables
-var modal = $("#myModal")[0];
-
-getToday();
-
 //Modal
 $('div').delegate('.myBtn','click', function (event){
   event.preventDefault();
@@ -73,6 +71,8 @@ window.onclick = function(event) {
 $('div').delegate('.copy-txt', 'click', function(){
   copyToClipboard("#account-number");
 });
+
+getToday();
 
 function copyToClipboard(element) {
   var $temp = $("<input>");
@@ -136,9 +136,6 @@ function getToday(){
 $(window).on("load", function() {
   var page_name = $('input[type="hidden"]').val();
   var _originalSize = $(window).width() + $(window).height();
-
-  $('#page-name').html(page_name);
-
 
   $('.openNavBtn').on('click', function(){
     $('#mySidenav').css('width', '100%');
