@@ -28,7 +28,6 @@ $('.link-collection a').on('click', function(event) {
     var el_name = el_href.split('#',2)[1];
     $('#target').load(el_name + '.html',
       function(){
-      console.log('load complete');
       var page_name = $('input[type="hidden"]').val();
       if(page_name == 'Account Details'){
         $('.page-title').append('<a id="qrcode-btn" class="pull-right" href="#qrcode">'+
@@ -67,12 +66,35 @@ window.onclick = function(event) {
   }
 }
 
+
 //copy account number to clipboard
 $('div').delegate('.copy-txt', 'click', function(){
   copyToClipboard("#account-number");
 });
 
 getToday();
+
+
+// Dialogs
+$('#ShowLoading').on('click', function(){
+    ShowLoading();
+    $('.loading-box').css('top', '200px'); //ignore this style
+});
+
+$('#HideLoading').on('click', function(){
+  $('.loading-box').css('top', '0px'); //ignore this style
+  HideLoading();
+});
+
+$('#ShowMessageBox').on('click', function(){
+    ShowMessageBox('check', 'Success', 'This is description');
+    $('.msg-box').css('top', '200px'); //ignore this style
+});
+
+$('#HideMessageBox').on('click', function(){
+  $('.msg-box').css('top', '0px'); //ignore this style
+  HideMessageBox();
+});
 
 function copyToClipboard(element) {
   var $temp = $("<input>");
@@ -131,7 +153,20 @@ function getToday(){
   $('input[type="date"]').attr('max',output);
 };
 
-}); //end ready fn
+});
+
+
+// ====================================
+//            end ready fn
+// ====================================
+
+
+
+
+
+
+
+
 
 $(window).on("load", function() {
   var page_name = $('input[type="hidden"]').val();
@@ -176,4 +211,9 @@ $(window).on("load", function() {
       $(".btm-pos").css("position","fixed");
     }
   });
-}); //end load fn
+
+});
+
+  // ====================================
+  //            end load fn
+  // ====================================
